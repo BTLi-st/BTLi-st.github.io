@@ -1,0 +1,248 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>markdown | Hexo</title><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>var config = {"hostname":"http://example.com","root":"/","preload":false,"path":""}</script><script src="//unpkg.com/mermaid@8.13.5/dist/mermaid.min.js"></script><script>mermaid.initialize({
+ startOnLoad: true
+ , theme: 'dark'
+});</script><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/atom-one-dark-reasonable.min.css"><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 6.3.0"></head><body style="background-image:url(https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg);"><main><header class="closed"><nav><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><ol class="navContent"><li class="navItem search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></li><li class="navItem"><a href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a href="/demo/"><span class="navItemTitle">独立页面</span></a></li></ol></nav><div class="search-popup"><div id="search-result"></div></div></header><article><div id="post-bg"><div id="post-title"><h1>markdown</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2022-10-12T10:47:06.000Z" id="date"> 2022-10-12</time></div></span><br><span>Last Update: <div class="control"><time datetime="2022-10-12T10:48:33.651Z" id="updated"> 2022-10-12</time></div></span><br><span>Word Count: <div class="control">1.6k</div></span><br><span>Read Time: <div class="control">6 min</div></span></div></div><hr><div id="post-content"><h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://s2.loli.net/2022/10/05/HKcVY1PTrsyMwmu.png" alt="头图"></h2><h1 id="MarkDown入门指南"><a href="#MarkDown入门指南" class="headerlink" title="MarkDown入门指南"></a>MarkDown入门指南</h1><h2 id="1-关于MarkDown"><a href="#1-关于MarkDown" class="headerlink" title="1.关于MarkDown"></a>1.关于MarkDown</h2><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>轻量，码量极低</li>
+<li>简单，易于上手</li>
+<li>扩展，兼容Html和LaTeX</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li><p>功能少，自定义程度低  </p>
+<blockquote>
+<p>例如原生不支持播放视频</p>
+</blockquote>
+</li>
+<li><p>标准不统一，不同解释器兼容性不同 </p>
+<blockquote>
+<p>不是所有都支持完整Html和LaTex</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="2-简单上手"><a href="#2-简单上手" class="headerlink" title="2.简单上手"></a>2.简单上手</h2><p><font color="red">注意：</font>本段只涉及MarkDown自带语法，在所有编辑器上均可正常显示</p>
+<h3 id="MarkDown-标题"><a href="#MarkDown-标题" class="headerlink" title="MarkDown 标题"></a>MarkDown 标题</h3><p>Markdown 标题有两种格式。</p>
+<h4 id="1-使用-x3D-和-标记一级和二级标题"><a href="#1-使用-x3D-和-标记一级和二级标题" class="headerlink" title="(1). 使用 &#x3D; 和 - 标记一级和二级标题"></a><strong>(1). 使用 &#x3D; 和 - 标记一级和二级标题</strong></h4><figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 4 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-section">这是一级标题</span><br><span class="hljs-section">=================</span><br><span class="hljs-section">这是二级标题</span><br><span class="hljs-section">-----------------</span><br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<h1 id="这是一级标题"><a href="#这是一级标题" class="headerlink" title="这是一级标题"></a>这是一级标题</h1><h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2></blockquote>
+<h4 id="2-使用-号标记"><a href="#2-使用-号标记" class="headerlink" title="(2). 使用 # 号标记"></a><strong>(2). 使用 # 号标记</strong></h4><figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 6 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-section"># 一级标题</span><br><span class="hljs-section">## 二级标题</span><br><span class="hljs-section">### 三级标题</span><br><span class="hljs-section">#### 四级标题</span><br><span class="hljs-section">##### 五级标题</span><br><span class="hljs-section">###### 六级标题</span><br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6></blockquote>
+<h3 id="MarkDown-段落格式"><a href="#MarkDown-段落格式" class="headerlink" title="MarkDown 段落格式"></a>MarkDown 段落格式</h3><p>Markdown 段落没有特殊的格式，直接编写文字就好，段落的换行是使用两个以上空格加上回车。<br>当然也可以在段落后面使用一个空行来表示重新开始一个段落。</p>
+<h3 id="MarkDown-字体格式"><a href="#MarkDown-字体格式" class="headerlink" title="MarkDown 字体格式"></a>MarkDown 字体格式</h3><h4 id="1-MarkDown字体"><a href="#1-MarkDown字体" class="headerlink" title="(1). MarkDown字体"></a><strong>(1). MarkDown字体</strong></h4><figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 6 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-emphasis">*斜体文本*</span><br><span class="hljs-emphasis">_斜体文本_</span><br><span class="hljs-strong">**粗体文本**</span><br><span class="hljs-strong">__粗体文本__</span><br><span class="hljs-strong">**<span class="hljs-emphasis">*粗斜体文本*</span>**</span><br><span class="hljs-strong">__<span class="hljs-emphasis">_粗斜体文本_</span>__</span><br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p><em>斜体文本</em><br><em>斜体文本</em><br><strong>粗体文本</strong><br><strong>粗体文本</strong><br><em><strong>粗斜体文本</strong></em><br><em><strong>粗斜体文本</strong></em>  </p>
+</blockquote>
+<h4 id="2-删除线"><a href="#2-删除线" class="headerlink" title="(2). 删除线"></a><strong>(2). 删除线</strong></h4><figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 1 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">~~删除线~~<br></code></pre></td></tr></table></div></figure>
+<blockquote>
+<p><del>删除线</del></p>
+</blockquote>
+<h4 id="3-分隔线"><a href="#3-分隔线" class="headerlink" title="(3). 分隔线"></a><strong>(3). 分隔线</strong></h4><figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 9 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-strong">**<span class="hljs-emphasis">*</span></span><br><span class="hljs-emphasis"><span class="hljs-strong"></span></span><br><span class="hljs-emphasis"><span class="hljs-strong">*</span> <span class="hljs-emphasis">* *</span></span><br><span class="hljs-strong"></span><br><span class="hljs-strong">**</span><span class="hljs-strong">**<span class="hljs-emphasis">*</span></span><br><span class="hljs-emphasis"><span class="hljs-strong"></span></span><br><span class="hljs-emphasis"><span class="hljs-strong">- - -</span></span><br><span class="hljs-emphasis"><span class="hljs-strong"></span></span><br><span class="hljs-emphasis"><span class="hljs-strong">----------</span></span><br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<hr>
+</blockquote>
+<blockquote>
+<hr>
+</blockquote>
+<blockquote>
+<hr>
+</blockquote>
+<blockquote>
+<hr>
+</blockquote>
+<blockquote>
+<hr>
+</blockquote>
+<h4 id="4-脚注"><a href="#4-脚注" class="headerlink" title="(4). 脚注"></a><strong>(4). 脚注</strong></h4><figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 2 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown">文本[^要注明的文本]<br>[<span class="hljs-symbol">^要注明的文本</span>]: <span class="hljs-link">脚注</span><br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>文本 <a href="%E8%84%9A%E6%B3%A8">^1</a></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<h3 id="Mardown-列表"><a href="#Mardown-列表" class="headerlink" title="Mardown 列表"></a>Mardown 列表</h3><h4 id="1-无序列表"><a href="#1-无序列表" class="headerlink" title="(1). 无序列表"></a><strong>(1). 无序列表</strong></h4><figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 12 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">*</span> 第一项<br><span class="hljs-bullet">*</span> 第二项<br><span class="hljs-bullet">*</span> 第三项<br><br><span class="hljs-bullet">+</span> 第一项<br><span class="hljs-bullet">+</span> 第二项<br><span class="hljs-bullet">+</span> 第三项<br><br><br><span class="hljs-bullet">-</span> 第一项<br><span class="hljs-bullet">-</span> 第二项<br><span class="hljs-bullet">-</span> 第三项<br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+</blockquote>
+<h4 id="2-有序列表"><a href="#2-有序列表" class="headerlink" title="(2). 有序列表"></a><strong>(2). 有序列表</strong></h4><figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 3 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 第一项<br><span class="hljs-bullet">2.</span> 第二项<br><span class="hljs-bullet">3.</span> 第三项<br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+</blockquote>
+<h4 id="3-列表嵌套"><a href="#3-列表嵌套" class="headerlink" title="(3). 列表嵌套"></a><strong>(3). 列表嵌套</strong></h4><p>列表嵌套只需在子列表中的选项前面添加两个或四个空格即可</p>
+<figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 6 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 第一项：<br><span class="hljs-bullet">    -</span> 第一项嵌套的第一个元素<br><span class="hljs-bullet">    -</span> 第一项嵌套的第二个元素<br><span class="hljs-bullet">2.</span> 第二项：<br><span class="hljs-bullet">    -</span> 第二项嵌套的第一个元素<br><span class="hljs-bullet">    -</span> 第二项嵌套的第二个元素<br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<ol>
+<li>第一项：<ul>
+<li>第一项嵌套的第一个元素</li>
+<li>第一项嵌套的第二个元素</li>
+</ul>
+</li>
+<li>第二项：<ul>
+<li>第二项嵌套的第一个元素</li>
+<li>第二项嵌套的第二个元素</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<h3 id="Markdown-区块"><a href="#Markdown-区块" class="headerlink" title="Markdown 区块"></a>Markdown 区块</h3><figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 3 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-quote">&gt; 最外层</span><br><span class="hljs-quote">&gt; &gt; 第一层嵌套</span><br><span class="hljs-quote">&gt; &gt; &gt; 第二层嵌套</span><br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>最外层</p>
+<blockquote>
+<p>第一层嵌套</p>
+<blockquote>
+<p>第二层嵌套</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>在区块中可使用列表，同理，在列表中可使用区块</p>
+<h3 id="Markdown-代码"><a href="#Markdown-代码" class="headerlink" title="Markdown 代码"></a>Markdown 代码</h3><h4 id="1-在段落中显示代码片段"><a href="#1-在段落中显示代码片段" class="headerlink" title="(1). 在段落中显示代码片段"></a><strong>(1). 在段落中显示代码片段</strong></h4><figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 1 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-code">`代码片段`</span><br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p><code>print()</code>函数</p>
+</blockquote>
+<h4 id="2-代码区块"><a href="#2-代码区块" class="headerlink" title="(2). 代码区块"></a><strong>(2). 代码区块</strong></h4><p>使用一个tab键或四个空格键</p>
+<pre><code>print(&#39;Hello World!&#39;)
+</code></pre>
+<p>使用<code>```</code>包裹</p>
+<figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 2 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-code">```语言名称（可选）</span><br><span class="hljs-code">内容</span><br></code></pre></td></tr></table></div></figure>
+<figure class="highlight open plaintext"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>TEXT 共 3 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext"><br>```python<br>print(&#x27;Hello World!&#x27;)<br></code></pre></td></tr></table></div></figure>
+
+<h3 id="Markdown链接"><a href="#Markdown链接" class="headerlink" title="Markdown链接"></a>Markdown链接</h3><figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 3 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">[<span class="hljs-string">链接名称</span>](<span class="hljs-link">链接地址</span>)<br>或<br>&lt;链接地址&gt;<br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1GJ411x7h7/k">python课程资源</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/">https://www.bilibili.com/</a></p>
+</blockquote>
+<h3 id="Markdown图片"><a href="#Markdown图片" class="headerlink" title="Markdown图片"></a>Markdown图片</h3><figure class="highlight open plaintext"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>TEXT 共 3 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">![alt text(替代文字)](图片地址)<br>或<br>![alt text(替代文字)](图片地址 &quot;可选标题&quot;)<br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p><img src="https://s2.loli.net/2022/09/27/jW7iaXJlsxqgbrZ.png" alt="甘雨"></p>
+</blockquote>
+<p>替代文字会在图片无法加载时出现</p>
+<p>图片可以带上链接</p>
+<figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 1 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">![<span class="hljs-string">alt text(替代文字)</span>](<span class="hljs-link">图片地址</span>)](<span class="hljs-link">链接地址</span>)<br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://lab.magiconch.com/homo/"><img src="https://s2.loli.net/2022/09/28/ckANtZsRgnwKqdP.png" alt="homo"></a></p>
+</blockquote>
+<h3 id="Markdown列表"><a href="#Markdown列表" class="headerlink" title="Markdown列表"></a>Markdown列表</h3><figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 4 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown">|  表头   | 表头  |<br>|  ----  | ----  |<br>| 单元格  | 单元格 |<br>| 单元格  | 单元格 |<br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody></table>
+</blockquote>
+<p><code>-: </code>设置内容和标题栏居右对齐。<br><code>:- </code>设置内容和标题栏居左对齐。<br><code>:-: </code>设置内容和标题栏居中对齐。</p>
+<figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 4 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown">| 左对齐 | 右对齐 | 居中对齐 |<br>| :-----| ----: | :----: |<br>| 单元格 | 单元格 | 单元格 |<br>| 单元格 | 单元格 | 单元格 |<br></code></pre></td></tr></table></div></figure>
+
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">左对齐</th>
+<th align="right">右对齐</th>
+<th align="center">居中对齐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+<tr>
+<td align="left">单元格</td>
+<td align="right">单元格</td>
+<td align="center">单元格</td>
+</tr>
+</tbody></table>
+</blockquote>
+<h3 id="Markdown转义符"><a href="#Markdown转义符" class="headerlink" title="Markdown转义符"></a>Markdown转义符</h3><p>显示特定的符号需要使用转义字符<code>\</code></p>
+<figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 12 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs markdown">\\   反斜线<br>\`   反引号<br>\<span class="hljs-emphasis">*   星号</span><br><span class="hljs-emphasis">\_   下划线</span><br><span class="hljs-emphasis">\&#123;&#125;  花括号</span><br><span class="hljs-emphasis">\[]  方括号</span><br><span class="hljs-emphasis">\()  小括号</span><br><span class="hljs-emphasis">\#   井字号</span><br><span class="hljs-emphasis">\+   加号</span><br><span class="hljs-emphasis">\-   减号</span><br><span class="hljs-emphasis">\.   英文句点</span><br><span class="hljs-emphasis">\!   感叹号</span><br></code></pre></td></tr></table></div></figure>
+<blockquote>
+<p>\   反斜线<br>`   反引号<br>*   星号<br>_   下划线<br>{}  花括号<br>[]  方括号<br>()  小括号<br>#   井字号<br>+   加号<br>-   减号<br>.   英文句点<br>!   感叹号</p>
+</blockquote>
+<h2 id="3-Markdown编辑与转化"><a href="#3-Markdown编辑与转化" class="headerlink" title="3.Markdown编辑与转化"></a>3.Markdown编辑与转化</h2><h3 id="Markdown编辑"><a href="#Markdown编辑" class="headerlink" title="Markdown编辑"></a>Markdown编辑</h3><p>使用vscode即可进行一般的编辑</p>
+<p><img src="https://s2.loli.net/2022/09/28/Zi4JQan5w8SfrBF.png" alt="vscode"></p>
+<p>图床建议使用<a target="_blank" rel="noopener" href="https://sm.ms/">sm.ms</a><a href="%E5%A6%82%E6%9E%9C%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E8%AF%B7%E7%94%A8%E5%A4%87%E7%94%A8%E5%9F%9F%E5%90%8D%3Chttps://smms.app/">^建议</a>或<a target="_blank" rel="noopener" href="https://www.github.com/">github</a><a href="%E8%BF%87%E5%BA%A6%E4%BD%BF%E7%94%A8%E5%8F%AF%E8%83%BD%E4%BC%9A%E8%A2%AB%E5%88%A0%E5%BA%93">^提醒</a></p>
+<p>图床管理推荐<a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/zh/">PicGo</a></p>
+<h3 id="Markdown转化"><a href="#Markdown转化" class="headerlink" title="Markdown转化"></a>Markdown转化</h3><p>右键菜单中选择转化为word或html</p>
+<blockquote>
+<p><font color="red">注意：</font>只在你这台电脑上有这个功能，因为这是我写的</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/09/28/L8ZwBNmj5rbYnMC.png" alt="menu"></p>
+<h2 id="4-Markdown进阶用法"><a href="#4-Markdown进阶用法" class="headerlink" title="4.Markdown进阶用法"></a>4.Markdown进阶用法</h2><p><font color="red">警告：</font>这些方法不一定在所有地方都适用</p>
+<h3 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h3><p>插入Html</p>
+<figure class="highlight open html"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>HTML 共 1 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">font</span> <span class="hljs-attr">color</span>=<span class="hljs-string">&quot;red&quot;</span>&gt;</span>红色<span class="hljs-tag">&lt;/<span class="hljs-name">font</span>&gt;</span><br></code></pre></td></tr></table></div></figure>
+<p><font color="red">红色</font></p>
+<h3 id="字体颜色"><a href="#字体颜色" class="headerlink" title="字体颜色"></a>字体颜色</h3><h4 id="1-html版"><a href="#1-html版" class="headerlink" title="(1). html版"></a>(1). html版</h4><p>如上文展示</p>
+<h4 id="2-latex版"><a href="#2-latex版" class="headerlink" title="(2). latex版"></a>(2). latex版</h4><figure class="highlight open markdown"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>MARKDOWN 共 1 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">$\color&#123;red&#125;&#123;红色&#125;$<br></code></pre></td></tr></table></div></figure>
+
+<p>$$\color{red}{红色}$$</p>
+<p>预览时支持，转换时不支持</p>
+<p>如果在html文件下没有正确显示是一件十分正常的事</p>
+<h3 id="播放视频"><a href="#播放视频" class="headerlink" title="播放视频"></a>播放视频</h3><p>只要有视频源就可以播放</p>
+<p>B站提供嵌入代码<br><img src="https://s2.loli.net/2022/09/28/tnB6i5zg4CUPOIu.png" alt="bilibili"></p>
+<figure class="highlight open html"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>HTML 共 1 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://player.bilibili.com/player.html?aid=815603474&amp;bvid=BV1kG4y1q7Dy&amp;cid=835029171&amp;page=1&quot;</span> <span class="hljs-attr">scrolling</span>=<span class="hljs-string">&quot;no&quot;</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;no&quot;</span> <span class="hljs-attr">framespacing</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">allowfullscreen</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br></code></pre></td></tr></table></div></figure>
+
+<iframe src="https://player.bilibili.com/player.html?aid=815603474&bvid=BV1kG4y1q7Dy&cid=835029171&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p>进行优化后</p>
+<figure class="highlight open html"><span class="code-header">    <span class="code-title">      <div class="code-icon"></div>HTML 共 1 行</span>      <span class="code-header-tail">        <button class="code-copy"></button>        <span class="code-space">展开</span></span></span></span>    <div class="code-box"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://player.bilibili.com/player.html?aid=815603474&amp;bvid=BV1kG4y1q7Dy&amp;cid=835029171&amp;page=1&amp;page=1&amp;high_quality=1&amp;danmaku=0&quot;</span> <span class="hljs-attr">allowfullscreen</span>=<span class="hljs-string">&quot;allowfullscreen&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;500&quot;</span> <span class="hljs-attr">scrolling</span>=<span class="hljs-string">&quot;no&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">sandbox</span>=<span class="hljs-string">&quot;allow-top-navigation allow-same-origin allow-forms allow-scripts&quot;</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br></code></pre></td></tr></table></div></figure>
+
+<iframe src="https://player.bilibili.com/player.html?aid=815603474&bvid=BV1kG4y1q7Dy&cid=835029171&page=1&page=1&high_quality=1&danmaku=0" allowfullscreen="allowfullscreen" width="100%" height="500" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"> </iframe>
+
+<p>在转换为word时会无视视频</p>
+<h3 id="latex"><a href="#latex" class="headerlink" title="latex"></a>latex</h3><p>markdown支持latex，但不同软件兼容性不同，请不要过度依赖</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div id="footer-link" style="left: 50%;order: 0;border-left: 1px solid #fe2;padding-right: unset;max-width: calc(50% - 5px);"><a href="/2022/10/12/hello-world/">Hello World Prev →</a></div></div></div><details id="reward"><summary>打赏</summary><div id="alipay"><span>支付宝 | Alipay</span><br><img src="/img/Alipay.png"></div><div id="wechat"><span>微信 | WeChat</span><br><img src="/img/WeChat.png"></div></details><div id="Valine"></div></div><div id="bottom-btn"><a id="to-index" href="#toc-div" title="index">≡</a><a id="to-top" onClick="scrolls.scrolltop();" title="to top" style="opacity: 0; display: none;">∧</a></div></article><aside><div id="aside-top"><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a target="_blank" rel="noopener" href="https://github.com/Yue-plus">John Doe</a></h1><div id="description"></div></div><div id="aside-block"><div id="toc-div"><h1>INDEX</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MarkDown%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97"><span class="toc-number"></span> <span class="toc-text">MarkDown入门指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%B3%E4%BA%8EMarkDown"><span class="toc-number">1.</span> <span class="toc-text">1.关于MarkDown</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%AE%80%E5%8D%95%E4%B8%8A%E6%89%8B"><span class="toc-number">2.</span> <span class="toc-text">2.简单上手</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MarkDown-%E6%A0%87%E9%A2%98"><span class="toc-number">2.1.</span> <span class="toc-text">MarkDown 标题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8-x3D-%E5%92%8C-%E6%A0%87%E8%AE%B0%E4%B8%80%E7%BA%A7%E5%92%8C%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">2.1.1.</span> <span class="toc-text">(1). 使用 &#x3D; 和 - 标记一级和二级标题</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number"></span> <span class="toc-text">这是一级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E6%98%AF%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">这是二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8-%E5%8F%B7%E6%A0%87%E8%AE%B0"><span class="toc-number">1.0.1.</span> <span class="toc-text">(2). 使用 # 号标记</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number"></span> <span class="toc-text">一级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">三级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">1.1.1.</span> <span class="toc-text">四级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%94%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">五级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%85%AD%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text">六级标题</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MarkDown-%E6%AE%B5%E8%90%BD%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">MarkDown 段落格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MarkDown-%E5%AD%97%E4%BD%93%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">MarkDown 字体格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-MarkDown%E5%AD%97%E4%BD%93"><span class="toc-number">1.3.1.</span> <span class="toc-text">(1). MarkDown字体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%88%A0%E9%99%A4%E7%BA%BF"><span class="toc-number">1.3.2.</span> <span class="toc-text">(2). 删除线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%88%86%E9%9A%94%E7%BA%BF"><span class="toc-number">1.3.3.</span> <span class="toc-text">(3). 分隔线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E8%84%9A%E6%B3%A8"><span class="toc-number">1.3.4.</span> <span class="toc-text">(4). 脚注</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mardown-%E5%88%97%E8%A1%A8"><span class="toc-number">1.4.</span> <span class="toc-text">Mardown 列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">1.4.1.</span> <span class="toc-text">(1). 无序列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">1.4.2.</span> <span class="toc-text">(2). 有序列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%88%97%E8%A1%A8%E5%B5%8C%E5%A5%97"><span class="toc-number">1.4.3.</span> <span class="toc-text">(3). 列表嵌套</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-%E5%8C%BA%E5%9D%97"><span class="toc-number">1.5.</span> <span class="toc-text">Markdown 区块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-%E4%BB%A3%E7%A0%81"><span class="toc-number">1.6.</span> <span class="toc-text">Markdown 代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%9C%A8%E6%AE%B5%E8%90%BD%E4%B8%AD%E6%98%BE%E7%A4%BA%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5"><span class="toc-number">1.6.1.</span> <span class="toc-text">(1). 在段落中显示代码片段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BB%A3%E7%A0%81%E5%8C%BA%E5%9D%97"><span class="toc-number">1.6.2.</span> <span class="toc-text">(2). 代码区块</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown%E9%93%BE%E6%8E%A5"><span class="toc-number">1.7.</span> <span class="toc-text">Markdown链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown%E5%9B%BE%E7%89%87"><span class="toc-number">1.8.</span> <span class="toc-text">Markdown图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown%E5%88%97%E8%A1%A8"><span class="toc-number">1.9.</span> <span class="toc-text">Markdown列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown%E8%BD%AC%E4%B9%89%E7%AC%A6"><span class="toc-number">1.10.</span> <span class="toc-text">Markdown转义符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Markdown%E7%BC%96%E8%BE%91%E4%B8%8E%E8%BD%AC%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">3.Markdown编辑与转化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown%E7%BC%96%E8%BE%91"><span class="toc-number">2.1.</span> <span class="toc-text">Markdown编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown%E8%BD%AC%E5%8C%96"><span class="toc-number">2.2.</span> <span class="toc-text">Markdown转化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Markdown%E8%BF%9B%E9%98%B6%E7%94%A8%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">4.Markdown进阶用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Html"><span class="toc-number">3.1.</span> <span class="toc-text">Html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2"><span class="toc-number">3.2.</span> <span class="toc-text">字体颜色</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-html%E7%89%88"><span class="toc-number">3.2.1.</span> <span class="toc-text">(1). html版</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-latex%E7%89%88"><span class="toc-number">3.2.2.</span> <span class="toc-text">(2). latex版</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91"><span class="toc-number">3.3.</span> <span class="toc-text">播放视频</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#latex"><span class="toc-number">3.4.</span> <span class="toc-text">latex</span></a></li></ol></li></ol></div></div></div><footer><nobr><span class="text-title">ICP</span><a class="text-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">赣ICP备19008355号</a></nobr><nobr><span class="text-title">©</span><span class="text-content">1970 to 2020</span></nobr><br><text>published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></text><text> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknight</a></text><wbr><text>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></text></footer></aside></main><canvas id="canvas-dust"></canvas><div id="cursor-container"><div id="cursor-outer"></div><div id="cursor-effect"></div></div><script src="/js/search.js"></script><script class="pjax-js">reset=_=>{new Valine({
+ el: '#Valine'
+ , appId: 'LSe7mf1XYliLqgIrc3jlqXfT-gzGzoHsz'
+ , appKey: 'Fu9giJfnidkCamaW89FUpidw' , placeholder: '此条评论委托企鹅物流发送'
+});code.findCode();mermaid.init(undefined, ('.mermaid'));}</script><script src="//unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"></script><script src="/js/arknights.js"></script><script>window.addEventListener("load",()=>{reset()})</script></body></html>
