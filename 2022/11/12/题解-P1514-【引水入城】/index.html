@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>题解 P1514 【引水入城】 | BTLi的个人博客</title><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>var config = {"root":"/","path":"search.json"}</script><script src="//unpkg.com/mermaid@8.13.5/dist/mermaid.min.js"></script><script>mermaid.initialize({
+ startOnLoad: true
+ , theme: 'dark'
+});</script><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/atom-one-dark-reasonable.min.css"><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body style="background-image:url(https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg);"><main><header class="closed"><nav><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><ol class="navContent"><li class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></li><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/demo/"><span class="navItemTitle">独立页面</span></a></li><li class="navItem"><a class="navBlock" href="/link/"><span class="navItemTitle">友链</span></a></li></ol></nav><div class="search-popup"><div id="search-result"></div></div></header><article><div id="post-bg"><div id="post-title"><h1>题解 P1514 【引水入城】</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2022-11-12T15:12:16.000Z" id="date"> 2022-11-12</time></div></span><br><span>Last Update: <div class="control"><time datetime="2022-11-12T15:13:10.408Z" id="updated"> 2022-11-12</time></div></span><br><span>Word Count: <div class="control">1.1k</div></span><br><span>Read Time: <div class="control">5 min</div></span></div></div><hr><div id="post-content"><p>高中时期的旧题解</p>
+<span id="more"></span>
+<h3 id="看到其他大佬的各种题解，蒟蒻瑟瑟发抖。"><a href="#看到其他大佬的各种题解，蒟蒻瑟瑟发抖。" class="headerlink" title="看到其他大佬的各种题解，蒟蒻瑟瑟发抖。"></a>看到其他大佬的各种题解，蒟蒻瑟瑟发抖。</h3><p>这道题一共有两个小问，很多大佬都想到用两次搜索，但鉴于本蒟蒻是一个懒惰的菜鸡，又不想去写什么bfs。于是，在经过一番激烈的挣扎后，该蒟蒻选择了——放弃。</p>
+<hr>
+<p>好了，回归正题，要只用一次搜索而且是dfs的话，肯定是要剪枝的（<del>废话</del>）。很多大佬也给出了各种奇妙的方式，比如对于靠近水的城市，如果它周围两个城市海拔都高于它的话，就不搜索。</p>
+<p>但是蒟蒻是一个很懒的人，于是他就想到了——记忆化搜索。</p>
+<p>根据大佬的证明，每个水库的所供给的靠近沙漠的城市一定是一个区间，那么我们可以储存每个城市所包含的区间（包括中间的城市）。当搜索到重复的城市时，我们只用知道它所可以供给的区间。一个城市所供给的区间就是附近海拔低于它的城市供给区间的并集。（怎么有种线段树的感觉…）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span></span><br><span class="hljs-function"></span>{<br>	<span class="hljs-keyword">if</span>(vis[a][b]) <span class="hljs-keyword">return</span> ;<span class="hljs-comment">//搜索过，直接返回 </span><br>	<span class="hljs-keyword">if</span>(a==n) li[a][b].l=b,li[a][b].r=b;<span class="hljs-comment">//靠近沙漠的区间初始化为自己 </span><br>	vis[a][b]=<span class="hljs-number">1</span>;<span class="hljs-comment">//标记访问  </span><br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">4</span>;i++)<br>	{<br>		<span class="hljs-type">int</span> x=a+di[<span class="hljs-number">0</span>][i],y=b+di[<span class="hljs-number">1</span>][i];<br>		<span class="hljs-keyword">if</span>(x&gt;<span class="hljs-number">0</span> &amp;&amp; x&lt;=n &amp;&amp; y&gt;<span class="hljs-number">0</span> &amp;&amp; y&lt;=m &amp;&amp; li[x][y].mp&lt;li[a][b].mp)<br>		{<br>			<span class="hljs-built_in">dfs</span>(x,y);<br>			li[a][b].l=li[a][b].l&gt;li[x][y].l?li[x][y].l:li[a][b].l;<span class="hljs-comment">//更新区间 </span><br>			li[a][b].r=li[a][b].r&gt;li[x][y].r?li[a][b].r:li[x][y].r;<br>		}<br>	}<br>}<br></code></pre></td></tr></table></figure>
+<p>之后就是关于第二小问，计算最少蓄水池，其实就是线段覆盖问题。</p>
+<blockquote>
+<p>1.我们其实按左端点排序就可以了，从小到大。</p>
+</blockquote>
+<blockquote>
+<p>2.记录目前覆盖区间的右端点，然后去记录所有左端点小于这个值的区间的最大右端点（就是贪心）。</p>
+</blockquote>
+<blockquote>
+<p>3.如果记录到最后的右端点值还是小于m的话，就直接加1（因为既然可以符合条件就一定可以覆盖。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=m;i++) <br>        {<br>            <span class="hljs-keyword">if</span> (li[<span class="hljs-number">1</span>][i].l&gt;m) <span class="hljs-keyword">break</span>;<span class="hljs-comment">//没有覆盖城市的蓄水池 </span><br>            <span class="hljs-keyword">if</span> (li[<span class="hljs-number">1</span>][i].l&lt;=<span class="hljs-number">1</span>+maxv) tmp=<span class="hljs-built_in">max</span>(tmp,li[<span class="hljs-number">1</span>][i].r);<span class="hljs-comment">//储存最大右区间 </span><br>            <span class="hljs-keyword">else</span><br>            {<br>                maxv=tmp;<span class="hljs-comment">//更新总右区间 </span><br>                ans++;<span class="hljs-comment">//计数 </span><br>                tmp=<span class="hljs-built_in">max</span>(li[<span class="hljs-number">1</span>][i].r,tmp);<span class="hljs-comment">//更新 </span><br>            }      <br>        }<br></code></pre></td></tr></table></figure>
+
+
+<p>好了，一遍dfs的方法就出来了，最长也就40ms左右。</p>
+<hr>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstdlib&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> mx=<span class="hljs-number">600</span>;<br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">line</span>{<br>	<span class="hljs-type">int</span> l,r;<br>	<span class="hljs-type">int</span> mp;<br>}li[mx][mx];<br><span class="hljs-type">bool</span> vis[mx][mx],flag=<span class="hljs-number">1</span>;<br><span class="hljs-type">int</span> n,m,ans,k;<br><span class="hljs-type">int</span> di[<span class="hljs-number">2</span>][<span class="hljs-number">4</span>]={{<span class="hljs-number">-1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>},{<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">-1</span>}};<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> a,<span class="hljs-type">int</span> b)</span></span><br><span class="hljs-function"></span>{<br>	<span class="hljs-keyword">if</span>(vis[a][b]) <span class="hljs-keyword">return</span> ;<span class="hljs-comment">//搜索过，直接返回 </span><br>	<span class="hljs-keyword">if</span>(a==n) li[a][b].l=b,li[a][b].r=b,k++;<span class="hljs-comment">//靠近沙漠的区间初始化为自己 ,计数可以被运水的城市 </span><br>	vis[a][b]=<span class="hljs-number">1</span>;<span class="hljs-comment">//标记访问</span><br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">4</span>;i++)<br>	{<br>		<span class="hljs-type">int</span> x=a+di[<span class="hljs-number">0</span>][i],y=b+di[<span class="hljs-number">1</span>][i];<br>		<span class="hljs-keyword">if</span>(x&gt;<span class="hljs-number">0</span> &amp;&amp; x&lt;=n &amp;&amp; y&gt;<span class="hljs-number">0</span> &amp;&amp; y&lt;=m &amp;&amp; li[x][y].mp&lt;li[a][b].mp)<br>		{<br>			<span class="hljs-built_in">dfs</span>(x,y);<br>			li[a][b].l=li[a][b].l&gt;li[x][y].l?li[x][y].l:li[a][b].l;<span class="hljs-comment">//更新区间 </span><br>			li[a][b].r=li[a][b].r&gt;li[x][y].r?li[a][b].r:li[x][y].r;<br>		}<br>	}<br>}<br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(line a,line b)</span></span><br><span class="hljs-function"></span>{<br>	<span class="hljs-keyword">if</span>(a.l!=b.l) <span class="hljs-keyword">return</span> a.l&lt;b.l;<br>	<span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> a.r&gt;b.r;<br>}<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>{<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d%d"</span>,&amp;n,&amp;m);<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)<br>	  <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;j&lt;=m;j++)<br>	    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;li[i][j].mp),li[i][j].r=<span class="hljs-number">0</span>,li[i][j].l=m+<span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=m;i++)<br>	  <span class="hljs-built_in">dfs</span>(<span class="hljs-number">1</span>,i);<br>	<span class="hljs-keyword">if</span>(m!=k) flag=<span class="hljs-number">0</span>,ans=m-k;<span class="hljs-comment">//没有覆盖完 </span><br>	<span class="hljs-keyword">if</span>(flag==<span class="hljs-number">1</span>)<br>	{<br>	    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"1\n"</span>);<br>		<span class="hljs-built_in">sort</span>(li[<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>,li[<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>+m,cmp);<br>		<span class="hljs-type">int</span> maxv=<span class="hljs-number">0</span>,tmp=<span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=m;i++) <br>        {<br>            <span class="hljs-keyword">if</span> (li[<span class="hljs-number">1</span>][i].l&gt;m) <span class="hljs-keyword">break</span>;<span class="hljs-comment">//没有覆盖城市的蓄水池 </span><br>            <span class="hljs-keyword">if</span> (li[<span class="hljs-number">1</span>][i].l&lt;=<span class="hljs-number">1</span>+maxv) tmp=<span class="hljs-built_in">max</span>(tmp,li[<span class="hljs-number">1</span>][i].r);<span class="hljs-comment">//储存最大右区间 </span><br>            <span class="hljs-keyword">else</span><br>            {<br>                maxv=tmp;<span class="hljs-comment">//更新总右区间 </span><br>                ans++;<span class="hljs-comment">//计数 </span><br>                tmp=<span class="hljs-built_in">max</span>(li[<span class="hljs-number">1</span>][i].r,tmp);<span class="hljs-comment">//更新 </span><br>            }      <br>        }<br>        <span class="hljs-keyword">if</span>(maxv!=m) ans++;<br>	}<br>	<span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">"0\n"</span>);<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,ans);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>}<br></code></pre></td></tr></table></figure>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div id="footer-link" style="right: calc(50% - 1px);order: 1;border-right: 1px solid #fe2;padding-left: unset;max-width: calc(50% - 4px);"><a href="/2022/11/12/%E9%A2%98%E8%A7%A3-P1312-%E3%80%90Mayan%E6%B8%B8%E6%88%8F%E3%80%91/">← Next 题解 P1312 【Mayan游戏】</a></div><div id="footer-link" style="left: 50%;order: 0;border-left: 1px solid #fe2;padding-right: unset;max-width: calc(50% - 5px);"><a href="/2022/11/12/%E9%A2%98%E8%A7%A3-P1160-%E3%80%90%E9%98%9F%E5%88%97%E5%AE%89%E6%8E%92%E3%80%91/">题解 P1160 【队列安排】 Prev →</a></div></div></div><div id="Valine"></div></div><div id="bottom-btn"><a id="to-index" href="#toc-div" title="index">≡</a><a id="to-top" onClick="scrolls.scrolltop();" title="to top" style="opacity: 0; display: none;">∧</a></div></article><aside><div id="aside-top"><div id="about"><a href="/" id="logo"><img src="https://s2.loli.net/2022/10/12/BYevbrAJWhsyg1t.png" alt="Logo"></a><h1 id="Dr"><a target="_blank" rel="noopener" href="https://github.com/BTLi-st">BTLi</a></h1><div id="description"></div></div><div id="aside-block"><div id="toc-div"><h1>INDEX</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%8B%E5%88%B0%E5%85%B6%E4%BB%96%E5%A4%A7%E4%BD%AC%E7%9A%84%E5%90%84%E7%A7%8D%E9%A2%98%E8%A7%A3%EF%BC%8C%E8%92%9F%E8%92%BB%E7%91%9F%E7%91%9F%E5%8F%91%E6%8A%96%E3%80%82"><span class="toc-number">1.</span> <span class="toc-text">看到其他大佬的各种题解，蒟蒻瑟瑟发抖。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code"><span class="toc-number"></span> <span class="toc-text">Code</span></a></div></div></div><footer><nobr>published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknight</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><div id="cursor-container"><div id="cursor-outer"></div><div id="cursor-effect"></div></div><script src="/js/search.js"></script><script class="pjax-js">reset=_=>{new Valine({
+ el: '#Valine'
+ , appId: 'rndOPgabbou5lvRdUI9EbtTC-gzGzoHsz'
+ , appKey: 'fHH78ULD0BfHZXv9ZUpL255K' , placeholder: '此条评论委托企鹅物流发送'
+});code.findCode();mermaid.init(undefined, ('.mermaid'));}</script><script src="//unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"></script><script src="/js/arknights.js"></script><script>window.addEventListener("load",()=>{reset()})</script></body></html>

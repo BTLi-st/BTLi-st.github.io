@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>题解 P1160 【队列安排】 | BTLi的个人博客</title><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>var config = {"root":"/","path":"search.json"}</script><script src="//unpkg.com/mermaid@8.13.5/dist/mermaid.min.js"></script><script>mermaid.initialize({
+ startOnLoad: true
+ , theme: 'dark'
+});</script><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/atom-one-dark-reasonable.min.css"><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body style="background-image:url(https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg);"><main><header class="closed"><nav><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><ol class="navContent"><li class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></li><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/demo/"><span class="navItemTitle">独立页面</span></a></li><li class="navItem"><a class="navBlock" href="/link/"><span class="navItemTitle">友链</span></a></li></ol></nav><div class="search-popup"><div id="search-result"></div></div></header><article><div id="post-bg"><div id="post-title"><h1>题解 P1160 【队列安排】</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2022-11-12T15:08:30.000Z" id="date"> 2022-11-12</time></div></span><br><span>Last Update: <div class="control"><time datetime="2022-11-12T15:10:24.561Z" id="updated"> 2022-11-12</time></div></span><br><span>Word Count: <div class="control">945</div></span><br><span>Read Time: <div class="control">4 min</div></span></div></div><hr><div id="post-content"><p>高中时期的旧题解</p>
+<span id="more"></span>
+<h2 id="本蒟蒻第一篇题解"><a href="#本蒟蒻第一篇题解" class="headerlink" title="本蒟蒻第一篇题解"></a>本蒟蒻第一篇题解</h2><p>若有错误，请谅解</p>
+<hr>
+<p>这道题是一道典型的模拟题，故本蒟蒻第一个想到的就是用数组（<del>太年轻</del>），然后每加一个同学，就把他后面的同学位置整体向后挪，将他放进去，然后</p>
+<h4 id="就没有然后了···"><a href="#就没有然后了···" class="headerlink" title="就没有然后了···"></a>就没有然后了···</h4><p>对于N，M ≤ 100000和这个无比粗暴的方法，不TLE就是奇迹</p>
+<hr>
+<p>妄想偷懒不行，只能好好分析一下题</p>
+<p>稍加观察可以看出，这是一个链式结构，移动同学肯定是不行的（时间复杂度太高），那么，只能对他们间的关系下手了</p>
+<p>我们可以把每相邻的的两个同学想象成他们牵着手（如图）<br><img src="https://i.loli.net/2019/05/25/5ce93d68a98c016430.jpg"><br>既然如此，我们就只需要改动左右手指向的同学就可以了<br>定义一个结构体</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">T</span>{<br>    <span class="hljs-type">int</span> l,r;        <span class="hljs-comment">//每个同学的“左右手” </span><br>}t[mx]={<span class="hljs-number">0</span>};<br></code></pre></td></tr></table></figure>
+<p>现在我们就手动模拟一下加入同学（以右边为例）<br>将编号为J的同学加入编号为i的同学右边<br><img src="https://i.loli.net/2019/05/25/5ce94307c4cbd77890.jpg" alt="示例"></p>
+<h5 id="第一步-J的右手牵I右手牵的同学"><a href="#第一步-J的右手牵I右手牵的同学" class="headerlink" title="第一步 J的右手牵I右手牵的同学"></a>第一步 J的右手牵I右手牵的同学</h5><p><img src="https://i.loli.net/2019/05/25/5ce9434b2793f64382.jpg" alt="第一步"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">t[j].r=t[i].r;<br></code></pre></td></tr></table></figure>
+<h5 id="第二步-J的左手牵I"><a href="#第二步-J的左手牵I" class="headerlink" title="第二步 J的左手牵I"></a>第二步 J的左手牵I</h5><p><img src="https://i.loli.net/2019/05/25/5ce94432b882920324.jpg" alt="第二步"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">t[j].l=i;<br></code></pre></td></tr></table></figure>
+
+<h5 id="第三步-I的右手牵J"><a href="#第三步-I的右手牵J" class="headerlink" title="第三步 I的右手牵J"></a>第三步 I的右手牵J</h5><p><img src="https://i.loli.net/2019/05/25/5ce946dce376247864.jpg" alt="第三步"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">t[i].r=j;<br></code></pre></td></tr></table></figure>
+
+<h5 id="第四步-J右手牵的同学的左手牵J"><a href="#第四步-J右手牵的同学的左手牵J" class="headerlink" title="第四步 J右手牵的同学的左手牵J"></a>第四步 J右手牵的同学的左手牵J</h5><p>注意：此时I的右手已经不牵原来那个同学了<br><img src="https://i.loli.net/2019/05/25/5ce9482add74d49726.jpg" alt="第四步"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">t[t[j].r].l=j;<br></code></pre></td></tr></table></figure>
+
+<p>此时J就加入链当中了</p>
+<p>左边同理</p>
+<p>加入函数如下</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-type">int</span> i,<span class="hljs-type">int</span> k,<span class="hljs-type">int</span> f)</span>       <span class="hljs-comment">//新增同学 </span></span><br><span class="hljs-function"></span>{<br>    <span class="hljs-keyword">if</span>(f==<span class="hljs-number">1</span>)         <span class="hljs-comment">//右 </span><br>    {<br>        t[k].r=t[i].r;<br>        t[k].l=i; <br>        t[i].r=k;<br>        t[t[k].r].l=k;<br>    }<br>    <span class="hljs-keyword">else</span>             <span class="hljs-comment">//左</span><br>    {<br>        t[k].r=i;<br>        t[k].l=t[i].l;<br>        t[i].l=k;<br>        t[t[k].l].r=k;<br>    }<br>}<br></code></pre></td></tr></table></figure>
+
+
+<hr>
+<p>接下来是移除</p>
+<p>我们虽然也可以用上面方法来删除</p>
+<p>不过我用的是另一种方法（<del>主要是懒</del>）</p>
+<p>我们可以给每个同学一个标记，标记了的将不会输出</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">T</span>{<br>    <span class="hljs-type">int</span> l,r;        <span class="hljs-comment">//每个同学的“左右手” </span><br>	<span class="hljs-type">int</span> d;          <span class="hljs-comment">//表示同学是否输出 </span><br>}t[mx]={<span class="hljs-number">0</span>};<br></code></pre></td></tr></table></figure>
+<p>结构体</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">while</span>(m--)<br>    {<br>        cin&gt;&gt;x;           <span class="hljs-comment">//要删去的同学</span><br>        t[x].d=<span class="hljs-number">1</span>;         <span class="hljs-comment">//将该同学标记为不输出 </span><br>    }<br></code></pre></td></tr></table></figure>
+<p>标记</p>
+<hr>
+<h1 id="接下来是细节问题"><a href="#接下来是细节问题" class="headerlink" title="接下来是细节问题"></a>接下来是细节问题</h1><h2 id="链的初始化"><a href="#链的初始化" class="headerlink" title="链的初始化"></a>链的初始化</h2><p>如果我们将1同学先输入进去</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">t[<span class="hljs-number">1</span>].l=<span class="hljs-number">1</span>,t[<span class="hljs-number">1</span>].r=<span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+<p>因为没有其他同学只能自己牵自己（<del>紧紧抱住弱小的自己</del>）</p>
+<p>但如果这样，到输出时就有一个问题（以样例为例）<br><img src="https://i.loli.net/2019/05/25/5ce94e224fc9b89880.jpg" alt="样例"><br>找不到开头！</p>
+<p>这时我们就要在初始化时动些手脚</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp">t[<span class="hljs-number">0</span>].r=<span class="hljs-number">0</span>,t[<span class="hljs-number">0</span>].l=<span class="hljs-number">0</span>;<br><span class="hljs-built_in">add</span>(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>);<br></code></pre></td></tr></table></figure>
+<p>定义个0同学<br>链将变成这样<br><img src="https://i.loli.net/2019/05/25/5ce94fc4077b913854.jpg" alt="链"><br>我们只要从0的右手牵的同学开始输出，再到0结束就行了</p>
+<p>输出代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=t[<span class="hljs-number">0</span>].r;i;i=t[i].r)<br>{<br>    <span class="hljs-keyword">if</span> (t[i].d==<span class="hljs-number">0</span>)    <span class="hljs-comment">//输出未标记的 </span><br>      cout&lt;&lt;i&lt;&lt;<span class="hljs-string">" "</span>;<br>}<br></code></pre></td></tr></table></figure>
+
+
+<hr>
+<h1 id="纯代码"><a href="#纯代码" class="headerlink" title="纯代码"></a>纯代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstdlib&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> mx=<span class="hljs-number">1e5</span>+<span class="hljs-number">10</span>;<br><span class="hljs-type">int</span> n,m;<br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">T</span>{<br>    <span class="hljs-type">int</span> l,r;        <span class="hljs-comment">//每个同学的“左右手” </span><br>	<span class="hljs-type">int</span> d;          <span class="hljs-comment">//表示同学是否输出 </span><br>}t[mx]={<span class="hljs-number">0</span>};<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-type">int</span> i,<span class="hljs-type">int</span> k,<span class="hljs-type">int</span> f)</span>       <span class="hljs-comment">//新增同学 </span></span><br><span class="hljs-function"></span>{<br>    <span class="hljs-keyword">if</span>(f==<span class="hljs-number">1</span>)         <span class="hljs-comment">//左 </span><br>    {<br>        t[k].r=t[i].r;<br>        t[k].l=i; <br>        t[i].r=k;<br>        t[t[k].r].l=k;<br>    }<br>    <span class="hljs-keyword">else</span>             <span class="hljs-comment">//右 </span><br>    {<br>        t[k].r=i;<br>        t[k].l=t[i].l;<br>        t[i].l=k;<br>        t[t[k].l].r=k;<br>    }<br>}<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>{<br>    <span class="hljs-type">int</span> x,k,f;<br>    cin&gt;&gt;n;<br>    t[<span class="hljs-number">0</span>].r=<span class="hljs-number">0</span>,t[<span class="hljs-number">0</span>].l=<span class="hljs-number">0</span>;<br>    <span class="hljs-built_in">add</span>(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">2</span>;i&lt;=n;i++)<br>    {<br>        cin&gt;&gt;x&gt;&gt;f;<br>        <span class="hljs-built_in">add</span>(x,i,f);<br>    }<br>    cin&gt;&gt;m;<br>    <span class="hljs-keyword">while</span>(m--)<br>    {<br>        cin&gt;&gt;x;<br>        t[x].d=<span class="hljs-number">1</span>;         <span class="hljs-comment">//将该同学标记为不输出 </span><br>    }<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=t[<span class="hljs-number">0</span>].r;i;i=t[i].r)<br>    {<br>        <span class="hljs-keyword">if</span> (t[i].d==<span class="hljs-number">0</span>)    <span class="hljs-comment">//输出未标记的 </span><br>          cout&lt;&lt;i&lt;&lt;<span class="hljs-string">" "</span>;<br>    }<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>}<br></code></pre></td></tr></table></figure>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div id="footer-link" style="right: calc(50% - 1px);order: 1;border-right: 1px solid #fe2;padding-left: unset;max-width: calc(50% - 4px);"><a href="/2022/11/12/%E9%A2%98%E8%A7%A3-P1514-%E3%80%90%E5%BC%95%E6%B0%B4%E5%85%A5%E5%9F%8E%E3%80%91/">← Next 题解 P1514 【引水入城】</a></div><div id="footer-link" style="left: 50%;order: 0;border-left: 1px solid #fe2;padding-right: unset;max-width: calc(50% - 5px);"><a href="/2022/10/20/test/">test Prev →</a></div></div></div><div id="Valine"></div></div><div id="bottom-btn"><a id="to-index" href="#toc-div" title="index">≡</a><a id="to-top" onClick="scrolls.scrolltop();" title="to top" style="opacity: 0; display: none;">∧</a></div></article><aside><div id="aside-top"><div id="about"><a href="/" id="logo"><img src="https://s2.loli.net/2022/10/12/BYevbrAJWhsyg1t.png" alt="Logo"></a><h1 id="Dr"><a target="_blank" rel="noopener" href="https://github.com/BTLi-st">BTLi</a></h1><div id="description"></div></div><div id="aside-block"><div id="toc-div"><h1>INDEX</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E8%92%9F%E8%92%BB%E7%AC%AC%E4%B8%80%E7%AF%87%E9%A2%98%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">本蒟蒻第一篇题解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%B1%E6%B2%A1%E6%9C%89%E7%84%B6%E5%90%8E%E4%BA%86%C2%B7%C2%B7%C2%B7"><span class="toc-number">1.0.1.</span> <span class="toc-text">就没有然后了···</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-J%E7%9A%84%E5%8F%B3%E6%89%8B%E7%89%B5I%E5%8F%B3%E6%89%8B%E7%89%B5%E7%9A%84%E5%90%8C%E5%AD%A6"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">第一步 J的右手牵I右手牵的同学</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-J%E7%9A%84%E5%B7%A6%E6%89%8B%E7%89%B5I"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">第二步 J的左手牵I</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5-I%E7%9A%84%E5%8F%B3%E6%89%8B%E7%89%B5J"><span class="toc-number">1.0.1.3.</span> <span class="toc-text">第三步 I的右手牵J</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5-J%E5%8F%B3%E6%89%8B%E7%89%B5%E7%9A%84%E5%90%8C%E5%AD%A6%E7%9A%84%E5%B7%A6%E6%89%8B%E7%89%B5J"><span class="toc-number">1.0.1.4.</span> <span class="toc-text">第四步 J右手牵的同学的左手牵J</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E6%98%AF%E7%BB%86%E8%8A%82%E9%97%AE%E9%A2%98"><span class="toc-number"></span> <span class="toc-text">接下来是细节问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">链的初始化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%AF%E4%BB%A3%E7%A0%81"><span class="toc-number"></span> <span class="toc-text">纯代码</span></a></div></div></div><footer><nobr>published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknight</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><div id="cursor-container"><div id="cursor-outer"></div><div id="cursor-effect"></div></div><script src="/js/search.js"></script><script class="pjax-js">reset=_=>{new Valine({
+ el: '#Valine'
+ , appId: 'rndOPgabbou5lvRdUI9EbtTC-gzGzoHsz'
+ , appKey: 'fHH78ULD0BfHZXv9ZUpL255K' , placeholder: '此条评论委托企鹅物流发送'
+});code.findCode();mermaid.init(undefined, ('.mermaid'));}</script><script src="//unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"></script><script src="/js/arknights.js"></script><script>window.addEventListener("load",()=>{reset()})</script></body></html>
